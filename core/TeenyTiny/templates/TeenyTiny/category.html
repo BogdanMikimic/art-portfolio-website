@@ -1,0 +1,22 @@
+{% extends 'TeenyTiny/base.html' %}
+{% load static %}
+
+{% block title %} TeenyTiny | {{handle_categorie}} {% endblock %}
+
+{% block navigation %}
+<a class="a_nav" href="{% url 'categories' %}">Home</a>
+<a class="a_nav" href="{% url 'aboutme' %}">About me</a>
+<a class="a_nav" href="{% url 'contact' question=0 %}">Contact</a>
+{% endblock %}
+
+{% block body %}
+<div id="div_categories">
+  {% for obiect in handle_obiecte %}
+  <a href="{% url 'pictura' id_pictura=obiect.id %}" class="a_floare_specifica">
+    <img src="{{obiect.imagine_pictura.url}}" class="img_floare">
+    <p>{{obiect.nume_pictura}}</p>
+  </a>
+  {% endfor %}
+
+</div>
+{% endblock %}

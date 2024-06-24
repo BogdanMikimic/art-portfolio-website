@@ -1,0 +1,13 @@
+{% extends 'TeenyTiny/base.html' %}
+{% load static %}
+
+{% block title %} TeenyTiny | Home {% endblock %}
+
+{% block body %}
+<div class="div_logo_prima_pagina">
+  <a href="{% url 'categories' %}" class="a_logo">
+    <img id="img_homepage" src="{% static 'TeenyTiny/img/homepageLogo_r.png' %}" alt="">
+  </a>
+  <a href="{% url 'categories' %}" class="a_logo_titlu"> TEENY TINY </a>
+</div>
+{% endblock %}

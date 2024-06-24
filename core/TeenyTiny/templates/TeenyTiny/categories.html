@@ -1,0 +1,22 @@
+{% extends 'TeenyTiny/base.html' %}
+{% load static %}
+
+{% block title %} TeenyTiny | Home {% endblock %}
+
+{% block navigation %}
+<a class="a_nav" href="{% url 'aboutme' %}">About me</a>
+<a class="a_nav" href="{% url 'contact' question=0 %}">Contact</a>
+{% endblock %}
+
+{% block body %}
+<div id="div_categories">
+  {% for cat in cat_handle%}
+  <a href="{% url 'category' categorie=cat.nume_categorie %}" class="a_categorie_specifica">
+    <img src="{{cat.imagine_categorie.url}}" alt="" class="img_categories">
+    <p class="p_nume_categorie">{{cat.nume_categorie}}</p>
+  </a>
+
+  {% endfor %}
+
+</div>
+{% endblock %}

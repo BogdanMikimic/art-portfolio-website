@@ -1,0 +1,16 @@
+{% extends 'TeenyTiny/base.html' %}
+
+{% block title %} TeenyTiny | Thank you {% endblock %}
+
+{% block navigation %}
+<a class="a_nav" href="{% url 'categories' %}">Home</a>
+<a class="a_nav" href="{% url 'contact' question=0 %}">Contact</a>
+{% endblock %}
+
+{% block body %}
+<div class="div_thank_you">
+  <p class='p_thank_you'>Thank you! We will get back to you as soon as possible</p>
+  <a href="{% url 'home' %}" class='a_ask_about_painting'>Back home</a>
+</div>
+
+{% endblock %}

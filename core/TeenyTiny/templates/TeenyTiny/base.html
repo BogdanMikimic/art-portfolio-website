@@ -1,0 +1,36 @@
+  <!DOCTYPE html>
+  {% load static %}
+  <html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="{% static 'TeenyTiny/img/Avatar.png' %}">
+    <link rel="stylesheet" href="{% static 'TeenyTiny/css/master.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} {% endblock %}</title>
+  </head>
+
+  <body>
+    <div class="div_main_body">
+      <nav>
+        {% block navigation %}
+        <a class="a_nav" href="{% url 'categories' %}">Painting categories</a>
+        <a class="a_nav" href="{% url 'aboutme' %}">About me</a>
+        <a class="a_nav" href="{% url 'contact' question=0 %}">Contact</a>
+        {% endblock %}
+      </nav>
+
+      {% block body %}{% endblock %}
+
+      <footer>
+        <a class="a_footer" href="https://www.facebook.com" target="_blank">
+          <img class="img_footer" src="{% static 'TeenyTiny/img/FacebookLogo-1.jpg' %}">
+        </a>
+        <a class="a_footer" href="https://www.instagram.com">
+          <img class="img_footer" src="{% static 'TeenyTiny/img/InstagramLogo1.jpg' %}" target="_blank">
+        </a>
+      </footer>
+    </div>
+  </body>
+
+  </html>

@@ -1,0 +1,25 @@
+{% extends 'TeenyTiny/base.html' %}
+{% load static %}
+
+{% block title %} TeenyTiny | About me {% endblock %}
+
+{% block navigation %}
+<a class="a_nav" href="{% url 'categories' %}">Home</a>
+<a class="a_nav" href="{% url 'contact' question=0 %}">Contact</a>
+{% endblock %}
+
+
+{% block body %}
+<div class="div_about_me">
+{% for line in about_me%}
+<h1 class="h1_about_me">{{ line.titlu }}</h1>
+<img src="{{ line.imagine.url }}" alt="" class="img_about_me">
+<div class="div_about_text">
+  {{ line.descriere|linebreaks }}
+</div>
+
+{% endfor %}
+<a class="a_about_me" href="{% url 'contact' question=0 %}">Contact me</a>
+<a class="a_about_me" href="{% url 'home' %}">Back home</a>
+</div>
+{% endblock %}
