@@ -52,7 +52,8 @@ Last Name: {filled_form.cleaned_data["last_name"]}
 Email: {filled_form.cleaned_data["email"]}
 Question: {filled_form.cleaned_data["question"]}'''
             email_title = subiect
-            MailSender(email_title, email_content)
+            # configure your email sender and uncomment the line below
+            # MailSender(email_title, email_content)
             obiect = filled_form.save(commit=False)
             obiect.subject = subiect
             obiect.save()

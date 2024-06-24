@@ -1,17 +1,15 @@
-class MailSender():
+class MailSender:
     def __init__(self, titlu, continut):
         import smtplib, ssl
         from email.mime.text import MIMEText
         from email.mime.multipart import MIMEMultipart
 
 
-        server_mail = 'smtp.gmail.com'
+        server_mail = 'smtp.gmail.com' # this is configured for gmail
         port = 465
-        # change to your email
-        sender = 'generic@gmail.com'
-        # set your password
-        password = 'fakePassword1234'
-        receiver = ''
+        sender = 'generic@gmail.com' # change to the email (gmail) you have configured to receive emails from
+        password = 'fakePassword1234' # input your password
+        receiver = '' # inseert email of the receiver (your email address where you want to receive notifications)
         message = MIMEMultipart()
         message['Subject'] = titlu
         message['From'] = sender

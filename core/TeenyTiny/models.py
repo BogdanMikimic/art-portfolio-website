@@ -9,7 +9,7 @@ class CategoriiPicturi(models.Model):
     marime_imagine = models.CharField(max_length=100, default='1597px X 1597px circle png')
 
     class Meta:
-        verbose_name_plural = 'Categorii de picturi'
+        verbose_name_plural = 'Paintings categories'
 
     def __str__(self):
         return self.nume_categorie
@@ -22,7 +22,7 @@ class Picturi(models.Model):
     categorie_pictura = models.ForeignKey(CategoriiPicturi, default='Nealocat', on_delete=models.SET_DEFAULT)
     marime_imagine = models.CharField(max_length=100, default='1654px(latime) X 2339px (inaltime) jpg')
     class Meta:
-        verbose_name_plural = 'Picturi'
+        verbose_name_plural = 'Paintings'
 
 class ReceivedEmails(models.Model):
     subject = models.CharField(max_length=100)
@@ -33,7 +33,7 @@ class ReceivedEmails(models.Model):
     date_and_time = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        verbose_name_plural = 'Emailuri primite'
+        verbose_name_plural = 'Received emails'
 
 
 class AboutUs(models.Model):
